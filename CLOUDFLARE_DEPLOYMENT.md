@@ -158,6 +158,12 @@ If you get "Cannot use assets with a binding" error:
 1. Use the direct command: `npx wrangler pages deploy dist --project-name=shamji-web`
 2. Or remove any `binding` entries from `wrangler.toml`
 
+If you get "\_headers configuration" errors:
+
+1. Ensure `_headers` file uses proper Cloudflare Pages format
+2. Use path patterns like `/assets/*` instead of file extensions like `*.ttf`
+3. Each header line must be properly indented under its path
+
 ### Custom Domain Issues
 
 1. Verify DNS propagation (can take up to 24 hours)
