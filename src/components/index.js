@@ -6,5 +6,10 @@ export {
 } from "./Layout/ResponsiveGrid";
 export { default as ResponsiveSection } from "./Layout/ResponsiveSection";
 
+// Page Components
+export { default as Header } from "./Header/Header";
+export { default as Hero } from "./Hero/Hero";
+export { default as TrustSection } from "./TrustSection/TrustSection";
+
 // Hooks
 export { useResponsive } from "../hooks/useResponsive";
