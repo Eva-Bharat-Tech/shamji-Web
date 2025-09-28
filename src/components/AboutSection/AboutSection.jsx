@@ -48,20 +48,20 @@ const AboutSection = () => {
           alignItems: "start",
           textAlign: "start",
           position: "relative",
-          minHeight: { xs: 120, sm: 180, md: 240 },
+          minHeight: { xs: 120, sm: 160, md: 240 },
         }}
       >
         {/* Icon Circle */}
         <Box
           sx={{
-            width: { xs: 50, sm: 80, md: 100 },
-            height: { xs: 50, sm: 80, md: 100 },
+            width: { xs: 50, sm: 70, md: 100 },
+            height: { xs: 50, sm: 70, md: 100 },
             borderRadius: "50%",
             backgroundColor: stat.color,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            mb: { xs: 1.5, sm: 3, md: 4 },
+            mb: { xs: 1.5, sm: 2, md: 4 },
             position: "relative",
           }}
         >
@@ -69,8 +69,8 @@ const AboutSection = () => {
             src={stat.iconSrc}
             alt={stat.label}
             style={{
-              width: isMobile ? "24px" : isTablet ? "40px" : "48px",
-              height: isMobile ? "24px" : isTablet ? "40px" : "48px",
+              width: isMobile ? "24px" : isTablet ? "35px" : "48px",
+              height: isMobile ? "24px" : isTablet ? "35px" : "48px",
               objectFit: "contain",
             }}
           />
@@ -82,8 +82,8 @@ const AboutSection = () => {
           sx={{
             fontWeight: 700,
             color: "text.primary",
-            fontSize: { xs: "1.2rem", sm: "1.8rem", md: "2.2rem" },
-            mb: { xs: 0.5, sm: 1 },
+            fontSize: { xs: "1.2rem", sm: "1.6rem", md: "2.2rem" },
+            mb: { xs: 0.5, sm: 0.8, md: 1 },
           }}
         >
           {stat.number}
@@ -95,8 +95,8 @@ const AboutSection = () => {
           sx={{
             fontWeight: 500,
             color: "text.primary",
-            fontSize: { xs: "0.7rem", sm: "1rem", md: "1.1rem" },
-            maxWidth: { xs: 80, sm: 150, md: 180 },
+            fontSize: { xs: "0.7rem", sm: "0.9rem", md: "1.1rem" },
+            maxWidth: { xs: 80, sm: 120, md: 180 },
             lineHeight: 1.2,
           }}
         >
@@ -116,8 +116,8 @@ const AboutSection = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width={isMobile ? "60" : isTablet ? "120" : "180"}
-            height={isMobile ? "10" : "15"}
+            width={isMobile ? "60" : isTablet ? "100" : "180"}
+            height={isMobile ? "10" : isTablet ? "12" : "15"}
             viewBox="0 0 331 15"
             fill="none"
           >
@@ -158,7 +158,7 @@ const AboutSection = () => {
 
           <ResponsiveGridContainer spacing={{ xs: 3, sm: 4, md: 6 }}>
             {/* Left Column - Main Heading */}
-            <ResponsiveGrid xs={12} md={6}>
+            <ResponsiveGrid xs={12} sm={6} md={6}>
               <Typography
                 variant="h2"
                 sx={{
@@ -166,14 +166,14 @@ const AboutSection = () => {
                   color: "text.primary",
                   fontSize: {
                     xs: "1.8rem",
-                    sm: "3rem",
+                    sm: "2.2rem",
                     md: "3.5rem",
                     lg: "4rem",
                   },
                   lineHeight: { xs: 1.1, sm: 1.2 },
                   letterSpacing: { xs: "-0.01em", md: "-0.03em" },
-                  textAlign: { xs: "center", md: "left" },
-                  mb: { xs: 2, md: 0 },
+                  textAlign: { xs: "center", sm: "left", md: "left" },
+                  mb: { xs: 2, sm: 0, md: 0 },
                 }}
               >
                 Creative Marketing. <br />
@@ -183,24 +183,24 @@ const AboutSection = () => {
             </ResponsiveGrid>
 
             {/* Right Column - Description */}
-            <ResponsiveGrid xs={12} md={6}>
+            <ResponsiveGrid xs={12} sm={6} md={6}>
               <Box
                 sx={{
                   display: "flex",
-                  alignItems: { xs: "flex-start", md: "center" },
+                  alignItems: { xs: "flex-start", sm: "center", md: "center" },
                   height: "100%",
-                  mt: { xs: 2, md: 0 },
+                  mt: { xs: 2, sm: 0, md: 0 },
                 }}
               >
                 <Typography
                   variant="body1"
                   sx={{
                     color: "text.secondary",
-                    fontSize: { xs: "0.95rem", sm: "1.2rem", md: "1.3rem" },
+                    fontSize: { xs: "0.95rem", sm: "1.1rem", md: "1.3rem" },
                     lineHeight: 1.5,
                     fontWeight: 400,
-                    textAlign: { xs: "center", md: "left" },
-                    px: { xs: 1, md: 0 },
+                    textAlign: { xs: "center", sm: "left", md: "left" },
+                    px: { xs: 1, sm: 0, md: 0 },
                   }}
                 >
                   With years of expertise in brand visibility, media innovation,
