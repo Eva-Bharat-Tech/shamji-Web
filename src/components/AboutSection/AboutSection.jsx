@@ -48,20 +48,20 @@ const AboutSection = () => {
           alignItems: "start",
           textAlign: "start",
           position: "relative",
-          minHeight: 240,
+          minHeight: { xs: 120, sm: 180, md: 240 },
         }}
       >
         {/* Icon Circle */}
         <Box
           sx={{
-            width: { xs: 60, sm: 80, md: 100 },
-            height: { xs: 60, sm: 80, md: 100 },
+            width: { xs: 50, sm: 80, md: 100 },
+            height: { xs: 50, sm: 80, md: 100 },
             borderRadius: "50%",
             backgroundColor: stat.color,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            mb: { xs: 2, sm: 3, md: 4 },
+            mb: { xs: 1.5, sm: 3, md: 4 },
             position: "relative",
           }}
         >
@@ -69,23 +69,21 @@ const AboutSection = () => {
             src={stat.iconSrc}
             alt={stat.label}
             style={{
-              width: isMobile ? "32px" : isTablet ? "40px" : "48px",
-              height: isMobile ? "32px" : isTablet ? "40px" : "48px",
+              width: isMobile ? "24px" : isTablet ? "40px" : "48px",
+              height: isMobile ? "24px" : isTablet ? "40px" : "48px",
               objectFit: "contain",
             }}
           />
-
-          {/* Connecting Arrow - Only show on desktop and not for last item */}
         </Box>
 
         {/* Number */}
         <Typography
           variant="h3"
           sx={{
-            fontWeight: 600,
+            fontWeight: 700,
             color: "text.primary",
-            fontSize: { xs: "1rem", sm: "1.2rem", md: "1.3rem" },
-            mb: 1,
+            fontSize: { xs: "1.2rem", sm: "1.8rem", md: "2.2rem" },
+            mb: { xs: 0.5, sm: 1 },
           }}
         >
           {stat.number}
@@ -93,12 +91,13 @@ const AboutSection = () => {
 
         {/* Label */}
         <Typography
-          variant="h6"
+          variant="body2"
           sx={{
-            fontWeight: 600,
+            fontWeight: 500,
             color: "text.primary",
-            fontSize: { xs: "1rem", sm: "1.2rem", md: "1.3rem" },
-            maxWidth: { xs: 150, sm: 180, md: 200 },
+            fontSize: { xs: "0.7rem", sm: "1rem", md: "1.1rem" },
+            maxWidth: { xs: 80, sm: 150, md: 180 },
+            lineHeight: 1.2,
           }}
         >
           {stat.label}
@@ -108,13 +107,17 @@ const AboutSection = () => {
         <Box
           sx={{
             alignSelf: "flex-start",
-            marginTop: { xs: 0, sm: 0, md: 5 },
+            marginTop: { xs: 2, sm: 0, md: 5 },
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100%",
           }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width={isMobile ? "100" : isTablet ? "200" : "250"}
-            height="15"
+            width={isMobile ? "60" : isTablet ? "120" : "180"}
+            height={isMobile ? "10" : "15"}
             viewBox="0 0 331 15"
             fill="none"
           >
@@ -222,7 +225,7 @@ const AboutSection = () => {
             {statistics.map((stat, index) => (
               <ResponsiveGrid
                 key={index}
-                xs={12}
+                xs={4}
                 sm={4}
                 md={4}
                 sx={{
