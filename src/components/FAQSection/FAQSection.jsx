@@ -16,7 +16,7 @@ import {
   ResponsiveGridContainer,
   useResponsive,
 } from "../index";
-
+import FAQ from "../../assets/FAQ.svg";
 const FAQSection = () => {
   const { isMobile } = useResponsive();
   const [expanded, setExpanded] = useState(false);
@@ -109,7 +109,7 @@ const FAQSection = () => {
               }}
             >
               <img
-                src=".././FAQ.svg"
+                src={FAQ}
                 alt="FAQ Illustration"
                 style={{
                   width: "100%",

@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import "./index.css";
+import "./assets/fonts/fonts.css";
 import App from "./App.jsx";
 
 const theme = createTheme({
@@ -31,11 +32,14 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    // Responsive typography
+    fontFamily:
+      '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+    // Responsive typography with custom fonts
     h1: {
+      fontFamily:
+        '"Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
       fontSize: "2rem",
-      fontWeight: 600,
+      fontWeight: 700,
       lineHeight: 1.2,
       "@media (min-width:768px)": {
         fontSize: "2.5rem",
@@ -45,8 +49,10 @@ const theme = createTheme({
       },
     },
     h2: {
+      fontFamily:
+        '"Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
       fontSize: "1.75rem",
-      fontWeight: 600,
+      fontWeight: 700,
       lineHeight: 1.3,
       "@media (min-width:768px)": {
         fontSize: "2rem",
@@ -56,18 +62,81 @@ const theme = createTheme({
       },
     },
     h3: {
+      fontFamily:
+        '"Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
       fontSize: "1.5rem",
-      fontWeight: 500,
+      fontWeight: 600,
       "@media (min-width:768px)": {
         fontSize: "1.75rem",
       },
     },
-    body1: {
+    h4: {
+      fontFamily:
+        '"Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      fontSize: "1.25rem",
+      fontWeight: 600,
+      "@media (min-width:768px)": {
+        fontSize: "1.5rem",
+      },
+    },
+    h5: {
+      fontFamily:
+        '"Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      fontSize: "1.1rem",
+      fontWeight: 600,
+      "@media (min-width:768px)": {
+        fontSize: "1.25rem",
+      },
+    },
+    h6: {
+      fontFamily:
+        '"Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
       fontSize: "1rem",
+      fontWeight: 600,
+      "@media (min-width:768px)": {
+        fontSize: "1.1rem",
+      },
+    },
+    body1: {
+      fontFamily:
+        '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      fontSize: "1rem",
+      fontWeight: 400,
       lineHeight: 1.6,
       "@media (min-width:768px)": {
         fontSize: "1.1rem",
       },
+    },
+    body2: {
+      fontFamily:
+        '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      fontSize: "0.875rem",
+      fontWeight: 400,
+      lineHeight: 1.5,
+      "@media (min-width:768px)": {
+        fontSize: "0.95rem",
+      },
+    },
+    button: {
+      fontFamily:
+        '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      fontWeight: 500,
+      textTransform: "none",
+    },
+    caption: {
+      fontFamily:
+        '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      fontSize: "0.75rem",
+      fontWeight: 400,
+      lineHeight: 1.4,
+    },
+    overline: {
+      fontFamily:
+        '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      fontSize: "0.75rem",
+      fontWeight: 600,
+      letterSpacing: "0.1em",
+      textTransform: "uppercase",
     },
   },
   spacing: 8, // Base spacing unit
@@ -95,9 +164,18 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          fontFamily:
+            '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
           textTransform: "none",
           fontWeight: 500,
           borderRadius: 8,
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontFeatureSettings: '"kern" 1, "liga" 1, "calt" 1',
         },
       },
     },
