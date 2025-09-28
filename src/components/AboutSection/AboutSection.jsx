@@ -1,10 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import {
-  Campaign,
-  Group,
-  LocationCity,
-  ArrowForward,
-} from "@mui/icons-material";
+import { ArrowForward } from "@mui/icons-material";
 import {
   ResponsiveContainer,
   ResponsiveSection,
@@ -12,6 +7,9 @@ import {
   ResponsiveGridContainer,
   useResponsive,
 } from "../index";
+import marketingIcon from "../../assets/marketing.svg";
+import usersIcon from "../../assets/users-avatar.svg";
+import cityscapeIcon from "../../assets/cityscape.svg";
 
 const AboutSection = () => {
   const { isMobile, isTablet } = useResponsive();
@@ -19,19 +17,19 @@ const AboutSection = () => {
   // Statistics data
   const statistics = [
     {
-      icon: Campaign,
+      iconSrc: marketingIcon,
       number: "300+",
       label: "Successful Campaigns",
       color: "#93C5FD", // Light blue
     },
     {
-      icon: Group,
+      iconSrc: usersIcon,
       number: "150+",
       label: "Happy Clients",
       color: "#93C5FD", // Light blue
     },
     {
-      icon: LocationCity,
+      iconSrc: cityscapeIcon,
       number: "40+",
       label: "Cities",
       color: "#93C5FD", // Light blue
@@ -63,10 +61,13 @@ const AboutSection = () => {
           position: "relative",
         }}
       >
-        <stat.icon
-          sx={{
-            fontSize: { xs: 32, sm: 40, md: 48 },
-            color: "#1976d2", // Primary blue for icons
+        <img
+          src={stat.iconSrc}
+          alt={stat.label}
+          style={{
+            width: isMobile ? "32px" : isTablet ? "40px" : "48px",
+            height: isMobile ? "32px" : isTablet ? "40px" : "48px",
+            objectFit: "contain",
           }}
         />
 
