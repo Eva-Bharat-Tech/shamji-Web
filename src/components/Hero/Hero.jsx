@@ -1,22 +1,23 @@
 import { Box, Typography, Button } from "@mui/material";
-import { Star, StarBorder } from "@mui/icons-material";
 import {
   ResponsiveContainer,
   ResponsiveSection,
   useResponsive,
 } from "../index";
+import starIcon from "../../assets/star.svg";
 
 const Hero = () => {
   const { isMobile, isTablet } = useResponsive();
 
   // Decorative star component
-  const DecorativeStar = ({ size = 24, filled = true, sx = {} }) => {
-    const StarIcon = filled ? Star : StarBorder;
+  const DecorativeStar = ({ size = 24, sx = {} }) => {
     return (
-      <StarIcon
-        sx={{
-          color: "primary.main",
-          fontSize: size,
+      <img
+        src={starIcon}
+        alt="Decorative Star"
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
           ...sx,
         }}
       />
