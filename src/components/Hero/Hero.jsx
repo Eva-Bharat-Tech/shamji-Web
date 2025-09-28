@@ -32,38 +32,38 @@ const Hero = () => {
         overflow: "hidden",
       }}
     >
-      {/* Decorative Stars */}
+      {/* Decorative Stars - Adjusted for mobile */}
       <Box
         sx={{
           position: "absolute",
-          top: { xs: "15%", sm: "20%" },
-          right: { xs: "10%", sm: "15%", md: "20%" },
+          top: { xs: "10%", sm: "20%" },
+          right: { xs: "5%", sm: "15%", md: "20%" },
           zIndex: 1,
         }}
       >
-        <DecorativeStar size={isMobile ? 32 : 48} />
+        <DecorativeStar size={isMobile ? 24 : 48} />
       </Box>
 
       <Box
         sx={{
           position: "absolute",
-          bottom: { xs: "25%", sm: "30%" },
-          left: { xs: "5%", sm: "8%", md: "10%" },
+          bottom: { xs: "35%", sm: "30%" },
+          left: { xs: "8%", sm: "8%", md: "10%" },
           zIndex: 1,
         }}
       >
-        <DecorativeStar size={isMobile ? 24 : 32} />
+        <DecorativeStar size={isMobile ? 16 : 32} />
       </Box>
 
       <Box
         sx={{
           position: "absolute",
-          bottom: { xs: "15%", sm: "20%" },
-          right: { xs: "8%", sm: "12%", md: "15%" },
+          bottom: { xs: "25%", sm: "20%" },
+          right: { xs: "10%", sm: "12%", md: "15%" },
           zIndex: 1,
         }}
       >
-        <DecorativeStar size={isMobile ? 20 : 28} />
+        <DecorativeStar size={isMobile ? 14 : 28} />
       </Box>
 
       <ResponsiveContainer>
@@ -86,16 +86,17 @@ const Hero = () => {
             sx={{
               fontWeight: 800,
               color: "text.primary",
-              mb: 3,
+              mb: { xs: 2, sm: 3 },
               maxWidth: { xs: "100%", sm: 800, md: 900 },
               fontSize: {
-                xs: "2.5rem",
+                xs: "2rem",
                 sm: "3.5rem",
                 md: "4rem",
                 lg: "4.5rem",
               },
               lineHeight: { xs: 1.1, sm: 1.2 },
-              letterSpacing: { xs: "-0.02em", md: "-0.03em" },
+              letterSpacing: { xs: "-0.01em", md: "-0.03em" },
+              px: { xs: 1, sm: 0 },
             }}
           >
             Transforming Ideas{" "}
@@ -125,11 +126,12 @@ const Hero = () => {
             variant="body1"
             sx={{
               color: "text.secondary",
-              mb: 4,
+              mb: { xs: 3, sm: 4 },
               maxWidth: { xs: "100%", sm: 600, md: 700 },
-              fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
-              lineHeight: 1.6,
+              fontSize: { xs: "0.95rem", sm: "1.2rem", md: "1.3rem" },
+              lineHeight: 1.5,
               fontWeight: 400,
+              px: { xs: 1, sm: 0 },
             }}
           >
             We specialize in delivering innovative advertising solutions across
@@ -145,12 +147,13 @@ const Hero = () => {
             size="large"
             sx={{
               borderRadius: 3,
-              px: { xs: 4, sm: 5, md: 6 },
-              py: { xs: 1.5, sm: 2 },
-              fontSize: { xs: "1rem", sm: "1.1rem" },
+              px: { xs: 3, sm: 5, md: 6 },
+              py: { xs: 1.2, sm: 2 },
+              fontSize: { xs: "0.9rem", sm: "1.1rem" },
               fontWeight: 600,
               textTransform: "none",
               boxShadow: "0 8px 24px rgba(25, 118, 210, 0.3)",
+              minWidth: { xs: 140, sm: "auto" },
               "&:hover": {
                 boxShadow: "0 12px 32px rgba(25, 118, 210, 0.4)",
                 transform: "translateY(-2px)",

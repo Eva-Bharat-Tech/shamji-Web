@@ -137,16 +137,17 @@ const AboutSection = () => {
     >
       <ResponsiveContainer>
         {/* Section Header */}
-        <Box sx={{ mb: { xs: 6, sm: 8, md: 10 } }}>
+        <Box sx={{ mb: { xs: 4, sm: 8, md: 10 } }}>
           <Typography
             variant="overline"
             sx={{
               color: "primary.main",
               fontWeight: 600,
-              fontSize: { xs: "0.9rem", sm: "1rem" },
+              fontSize: { xs: "0.8rem", sm: "1rem" },
               letterSpacing: "0.1em",
-              mb: 2,
+              mb: { xs: 1, sm: 2 },
               display: "block",
+              textAlign: { xs: "center", md: "left" },
             }}
           >
             ABOUT US
@@ -161,13 +162,15 @@ const AboutSection = () => {
                   fontWeight: 800,
                   color: "text.primary",
                   fontSize: {
-                    xs: "2.5rem",
+                    xs: "1.8rem",
                     sm: "3rem",
                     md: "3.5rem",
                     lg: "4rem",
                   },
                   lineHeight: { xs: 1.1, sm: 1.2 },
-                  letterSpacing: { xs: "-0.02em", md: "-0.03em" },
+                  letterSpacing: { xs: "-0.01em", md: "-0.03em" },
+                  textAlign: { xs: "center", md: "left" },
+                  mb: { xs: 2, md: 0 },
                 }}
               >
                 Creative Marketing. <br />
@@ -190,9 +193,11 @@ const AboutSection = () => {
                   variant="body1"
                   sx={{
                     color: "text.secondary",
-                    fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
-                    lineHeight: 1.6,
+                    fontSize: { xs: "0.95rem", sm: "1.2rem", md: "1.3rem" },
+                    lineHeight: 1.5,
                     fontWeight: 400,
+                    textAlign: { xs: "center", md: "left" },
+                    px: { xs: 1, md: 0 },
                   }}
                 >
                   With years of expertise in brand visibility, media innovation,
@@ -206,9 +211,9 @@ const AboutSection = () => {
         </Box>
 
         {/* Statistics Section */}
-        <Box>
+        <Box sx={{ mt: { xs: 4, sm: 6, md: 8 } }}>
           <ResponsiveGridContainer
-            spacing={{ xs: 4, sm: 6, md: 8 }}
+            spacing={{ xs: 2, sm: 6, md: 8 }}
             sx={{
               justifyContent: "center",
               alignItems: "center",

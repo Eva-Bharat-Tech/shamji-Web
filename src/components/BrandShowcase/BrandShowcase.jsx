@@ -74,7 +74,7 @@ const BrandShowcase = () => {
         variant="h6"
         sx={{
           fontWeight: 600,
-          fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+          fontSize: { xs: "0.8rem", sm: "1.3rem", md: "1.5rem" },
         }}
       >
         Layers
@@ -118,7 +118,7 @@ const BrandShowcase = () => {
         variant="h6"
         sx={{
           fontWeight: 600,
-          fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+          fontSize: { xs: "0.8rem", sm: "1.3rem", md: "1.5rem" },
         }}
       >
         Quotient
@@ -151,7 +151,7 @@ const BrandShowcase = () => {
         variant="h6"
         sx={{
           fontWeight: 600,
-          fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+          fontSize: { xs: "0.8rem", sm: "1.3rem", md: "1.5rem" },
         }}
       >
         Circooles
@@ -188,7 +188,7 @@ const BrandShowcase = () => {
         variant="h6"
         sx={{
           fontWeight: 600,
-          fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+          fontSize: { xs: "0.8rem", sm: "1.3rem", md: "1.5rem" },
         }}
       >
         Hourglass
@@ -229,7 +229,7 @@ const BrandShowcase = () => {
         variant="h6"
         sx={{
           fontWeight: 600,
-          fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+          fontSize: { xs: "0.8rem", sm: "1.3rem", md: "1.5rem" },
         }}
       >
         Command+R
@@ -255,7 +255,7 @@ const BrandShowcase = () => {
       <ResponsiveContainer>
         {/* Brand Logos Grid */}
         <ResponsiveGridContainer
-          spacing={{ xs: 3, sm: 4, md: 6 }}
+          spacing={{ xs: 1, sm: 4, md: 6 }}
           sx={{
             justifyContent: "center",
             alignItems: "center",
@@ -264,7 +264,7 @@ const BrandShowcase = () => {
           {logoComponents.map((LogoComponent, index) => (
             <ResponsiveGrid
               key={index}
-              xs={6}
+              xs={2.4}
               sm={4}
               md={2.4}
               sx={{
@@ -278,8 +278,8 @@ const BrandShowcase = () => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  minHeight: { xs: 60, sm: 70, md: 80 },
-                  opacity: 0.8,
+                  minHeight: { xs: 40, sm: 70, md: 80 },
+                  opacity: 0.7,
                   transition: "opacity 0.3s ease",
                   "&:hover": {
                     opacity: 1,
