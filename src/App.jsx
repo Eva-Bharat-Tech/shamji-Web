@@ -10,6 +10,7 @@ import {
   CTASection,
   Footer,
 } from "./components";
+import OurBeatifulWork from "./assets/OurBeatifulWork.png";
 
 function App() {
   return (
@@ -19,6 +20,11 @@ function App() {
       <TrustSection />
       <BrandShowcase />
       <AboutSection />
+      <img
+        src={OurBeatifulWork}
+        style={{ width: "100%", height: "auto" }}
+        alt="Services"
+      />
       <ServicesSection />
       <FAQSection />
       <CTASection />
