@@ -7,6 +7,8 @@ import {
   AboutSection,
   ServicesSection,
   FAQSection,
+  CTASection,
+  Footer,
 } from "./components";
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
       <AboutSection />
       <ServicesSection />
       <FAQSection />
+      <CTASection />
+      <Footer />
     </Box>
   );
 }

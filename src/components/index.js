@@ -14,6 +14,8 @@ export { default as BrandShowcase } from "./BrandShowcase/BrandShowcase";
 export { default as AboutSection } from "./AboutSection/AboutSection";
 export { default as ServicesSection } from "./ServicesSection/ServicesSection";
 export { default as FAQSection } from "./FAQSection/FAQSection";
+export { default as CTASection } from "./CTASection/CTASection";
+export { default as Footer } from "./Footer/Footer";
 
 // Hooks
 export { useResponsive } from "../hooks/useResponsive";
