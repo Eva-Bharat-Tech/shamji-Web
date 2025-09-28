@@ -1,6 +1,5 @@
 import { Box, Typography, IconButton, Divider } from "@mui/material";
 import {
-  Campaign,
   Email,
   Phone,
   LocationOn,
@@ -15,7 +14,7 @@ import {
   ResponsiveGridContainer,
   useResponsive,
 } from "../index";
-
+import Logo from "../../assets/Logo.svg";
 const Footer = () => {
   const { isMobile } = useResponsive();
 
@@ -68,39 +67,15 @@ const Footer = () => {
           <ResponsiveGrid xs={12} md={6}>
             <Box>
               {/* Logo */}
-              <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-                <Campaign
-                  sx={{
-                    fontSize: { xs: 32, sm: 40 },
-                    color: "primary.main",
-                    mr: 1,
+              <Box sx={{ mb: 3 }}>
+                <img
+                  src={Logo}
+                  alt="Sham Ji Advertisement Company"
+                  style={{
+                    height: "50px",
+                    width: "auto",
                   }}
                 />
-                <Box>
-                  <Typography
-                    variant="h5"
-                    component="div"
-                    sx={{
-                      fontWeight: 700,
-                      color: "primary.main",
-                      fontSize: { xs: "1.5rem", sm: "1.75rem" },
-                      lineHeight: 1,
-                    }}
-                  >
-                    Sham Ji
-                  </Typography>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      color: "text.secondary",
-                      fontSize: { xs: "0.7rem", sm: "0.75rem" },
-                      letterSpacing: 1,
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    Advertisement Company
-                  </Typography>
-                </Box>
               </Box>
 
               {/* Company Description */}

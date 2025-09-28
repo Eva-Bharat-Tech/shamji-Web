@@ -13,9 +13,9 @@ import {
   ListItemText,
   useTheme,
 } from "@mui/material";
-import { Menu as MenuIcon, Campaign } from "@mui/icons-material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 import { ResponsiveContainer, useResponsive } from "../index";
-
+import Logo from "../../assets/Logo.svg";
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { isMobile } = useResponsive();
@@ -35,9 +35,16 @@ const Header = () => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2, color: "primary.main" }}>
-        Sham Ji
-      </Typography>
+      <Box sx={{ my: 2, display: "flex", justifyContent: "center" }}>
+        <img
+          src={Logo}
+          alt="Sham Ji Advertisement Company"
+          style={{
+            height: "40px",
+            width: "auto",
+          }}
+        />
+      </Box>
       <List>
         {navigationItems.map((item) => (
           <ListItem key={item.label} disablePadding>
@@ -81,38 +88,14 @@ const Header = () => {
           <Toolbar sx={{ px: 0, py: { xs: 1, sm: 2 } }}>
             {/* Logo */}
             <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
-              <Campaign
-                sx={{
-                  fontSize: { xs: 32, sm: 40 },
-                  color: "primary.main",
-                  mr: 1,
+              <img
+                src={Logo}
+                alt="Sham Ji Advertisement Company"
+                style={{
+                  height: isMobile ? "40px" : "50px",
+                  width: "auto",
                 }}
               />
-              <Box>
-                <Typography
-                  variant="h5"
-                  component="div"
-                  sx={{
-                    fontWeight: 700,
-                    color: "primary.main",
-                    fontSize: { xs: "1.5rem", sm: "1.75rem" },
-                    lineHeight: 1,
-                  }}
-                >
-                  Sham Ji
-                </Typography>
-                <Typography
-                  variant="caption"
-                  sx={{
-                    color: "text.secondary",
-                    fontSize: { xs: "0.7rem", sm: "0.75rem" },
-                    letterSpacing: 1,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Advertisement Company
-                </Typography>
-              </Box>
             </Box>
 
             {/* Desktop Navigation */}
