@@ -6,6 +6,7 @@ import {
   BrandShowcase,
   AboutSection,
   ServicesSection,
+  FAQSection,
 } from "./components";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <BrandShowcase />
       <AboutSection />
       <ServicesSection />
+      <FAQSection />
     </Box>
   );
 }

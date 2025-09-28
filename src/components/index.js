@@ -13,6 +13,7 @@ export { default as TrustSection } from "./TrustSection/TrustSection";
 export { default as BrandShowcase } from "./BrandShowcase/BrandShowcase";
 export { default as AboutSection } from "./AboutSection/AboutSection";
 export { default as ServicesSection } from "./ServicesSection/ServicesSection";
+export { default as FAQSection } from "./FAQSection/FAQSection";
 
 // Hooks
 export { useResponsive } from "../hooks/useResponsive";
