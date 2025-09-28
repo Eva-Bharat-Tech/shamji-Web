@@ -1,5 +1,11 @@
 import { Box } from "@mui/material";
-import { Header, Hero, TrustSection, BrandShowcase } from "./components";
+import {
+  Header,
+  Hero,
+  TrustSection,
+  BrandShowcase,
+  AboutSection,
+} from "./components";
 
 function App() {
   return (
@@ -8,6 +14,7 @@ function App() {
       <Hero />
       <TrustSection />
       <BrandShowcase />
+      <AboutSection />
     </Box>
   );
 }
