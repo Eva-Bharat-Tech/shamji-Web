@@ -1,9 +1,9 @@
 name = "shamji-web"
 compatibility_date = "2025-09-28"
 
+# Static site configuration for Cloudflare Pages
 [assets]
 directory = "./dist"
-binding = "ASSETS"
 
 # Optional: Custom domain configuration
 # [env.production]
@@ -11,9 +11,3 @@ binding = "ASSETS"
 #   { pattern = "shamji-ads.com", zone_name = "shamji-ads.com" },
 #   { pattern = "www.shamji-ads.com", zone_name = "shamji-ads.com" }
 # ]
-
-# Build configuration for Cloudflare Pages
-[build]
-command = "bun run build"
-cwd = "."
-watch_dir = "src"

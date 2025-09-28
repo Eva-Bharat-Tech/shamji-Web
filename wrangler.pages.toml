@@ -1,0 +1,8 @@
+name = "shamji-web"
+compatibility_date = "2025-09-28"
+
+[env.production]
+account_id = "" # Add your Cloudflare account ID here
+
+# For static site deployment to Cloudflare Pages
+# Use: npx wrangler pages deploy dist --project-name=shamji-web

@@ -56,6 +56,9 @@ bun run build
 
 # Deploy to Cloudflare Pages
 npx wrangler pages deploy dist --project-name=shamji-web
+
+# Alternative: Deploy using the wrangler.toml configuration
+npx wrangler deploy
 ```
 
 ## Configuration Files
@@ -148,11 +151,26 @@ Your site is optimized for Cloudflare Pages with:
 2. Check `_routes.json` configuration
 3. Ensure paths are relative (no absolute paths)
 
+### Wrangler Deploy Errors
+
+If you get "Cannot use assets with a binding" error:
+
+1. Use the direct command: `npx wrangler pages deploy dist --project-name=shamji-web`
+2. Or remove any `binding` entries from `wrangler.toml`
+
 ### Custom Domain Issues
 
 1. Verify DNS propagation (can take up to 24 hours)
 2. Check SSL certificate status in dashboard
 3. Ensure domain is properly configured
+
+### First Time Deployment
+
+If this is your first deployment to a new project:
+
+1. The project will be created automatically
+2. You may need to authenticate: `npx wrangler auth login`
+3. Your site will be available at `https://shamji-web.pages.dev`
 
 ## Performance Features
 
