@@ -5,6 +5,7 @@ import {
   TrustSection,
   BrandShowcase,
   AboutSection,
+  ServicesSection,
 } from "./components";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <TrustSection />
       <BrandShowcase />
       <AboutSection />
+      <ServicesSection />
     </Box>
   );
 }
