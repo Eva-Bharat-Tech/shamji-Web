@@ -20,96 +20,111 @@ const AboutSection = () => {
       iconSrc: marketingIcon,
       number: "300+",
       label: "Successful Campaigns",
-      color: "#93C5FD", // Light blue
+      color: "#b9ceed", // Light blue
     },
     {
       iconSrc: usersIcon,
       number: "150+",
       label: "Happy Clients",
-      color: "#93C5FD", // Light blue
+      color: "#b9ceed", // Light blue
     },
     {
       iconSrc: cityscapeIcon,
       number: "40+",
       label: "Cities",
-      color: "#93C5FD", // Light blue
+      color: "#b9ceed", // Light blue
     },
   ];
 
   // Statistic component
   const StatisticItem = ({ stat, index, showArrow }) => (
     <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-        position: "relative",
-      }}
+      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
     >
-      {/* Icon Circle */}
       <Box
         sx={{
-          width: { xs: 80, sm: 100, md: 120 },
-          height: { xs: 80, sm: 100, md: 120 },
-          borderRadius: "50%",
-          backgroundColor: stat.color,
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          mb: { xs: 2, sm: 3, md: 4 },
+          flexDirection: "column",
+          alignItems: "start",
+          textAlign: "start",
           position: "relative",
+          minHeight: 240,
         }}
       >
-        <img
-          src={stat.iconSrc}
-          alt={stat.label}
-          style={{
-            width: isMobile ? "32px" : isTablet ? "40px" : "48px",
-            height: isMobile ? "32px" : isTablet ? "40px" : "48px",
-            objectFit: "contain",
+        {/* Icon Circle */}
+        <Box
+          sx={{
+            width: { xs: 60, sm: 80, md: 100 },
+            height: { xs: 60, sm: 80, md: 100 },
+            borderRadius: "50%",
+            backgroundColor: stat.color,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            mb: { xs: 2, sm: 3, md: 4 },
+            position: "relative",
           }}
-        />
-
-        {/* Connecting Arrow - Only show on desktop and not for last item */}
-        {showArrow && !isMobile && !isTablet && (
-          <ArrowForward
-            sx={{
-              position: "absolute",
-              right: { md: -60, lg: -80 },
-              fontSize: { md: 32, lg: 40 },
-              color: "#1976d2",
-              zIndex: 1,
+        >
+          <img
+            src={stat.iconSrc}
+            alt={stat.label}
+            style={{
+              width: isMobile ? "32px" : isTablet ? "40px" : "48px",
+              height: isMobile ? "32px" : isTablet ? "40px" : "48px",
+              objectFit: "contain",
             }}
           />
-        )}
+
+          {/* Connecting Arrow - Only show on desktop and not for last item */}
+        </Box>
+
+        {/* Number */}
+        <Typography
+          variant="h3"
+          sx={{
+            fontWeight: 600,
+            color: "text.primary",
+            fontSize: { xs: "1rem", sm: "1.2rem", md: "1.3rem" },
+            mb: 1,
+          }}
+        >
+          {stat.number}
+        </Typography>
+
+        {/* Label */}
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: 600,
+            color: "text.primary",
+            fontSize: { xs: "1rem", sm: "1.2rem", md: "1.3rem" },
+            maxWidth: { xs: 150, sm: 180, md: 200 },
+          }}
+        >
+          {stat.label}
+        </Typography>
       </Box>
-
-      {/* Number */}
-      <Typography
-        variant="h3"
-        sx={{
-          fontWeight: 800,
-          color: "text.primary",
-          fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
-          mb: 1,
-        }}
-      >
-        {stat.number}
-      </Typography>
-
-      {/* Label */}
-      <Typography
-        variant="h6"
-        sx={{
-          fontWeight: 600,
-          color: "text.primary",
-          fontSize: { xs: "1rem", sm: "1.2rem", md: "1.3rem" },
-          maxWidth: { xs: 150, sm: 180, md: 200 },
-        }}
-      >
-        {stat.label}
-      </Typography>
+      {showArrow && (
+        <Box
+          sx={{
+            alignSelf: "flex-start",
+            marginTop: { xs: 0, sm: 0, md: 5 },
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={isMobile ? "100" : isTablet ? "200" : "250"}
+            height="15"
+            viewBox="0 0 331 15"
+            fill="none"
+          >
+            <path
+              d="M6 12.8333C8.94552 12.8333 11.3333 10.4455 11.3333 7.5C11.3333 4.55448 8.94552 2.16667 6 2.16667C3.05448 2.16667 0.666667 4.55448 0.666667 7.5C0.666667 10.4455 3.05448 12.8333 6 12.8333ZM330.707 8.20711C331.098 7.81658 331.098 7.18342 330.707 6.79289L324.343 0.428932C323.953 0.0384078 323.319 0.0384078 322.929 0.428932C322.538 0.819457 322.538 1.45262 322.929 1.84315L328.586 7.5L322.929 13.1569C322.538 13.5474 322.538 14.1805 322.929 14.5711C323.319 14.9616 323.953 14.9616 324.343 14.5711L330.707 8.20711ZM6 7.5V8.5L330 8.5V7.5V6.5L6 6.5V7.5Z"
+              fill="#1A5EC6"
+            />
+          </svg>
+        </Box>
+      )}
     </Box>
   );
 
