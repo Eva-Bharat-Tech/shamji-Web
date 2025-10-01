@@ -85,7 +85,7 @@ const ServicesSection = () => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "flex-start",
+        alignItems: isMobile ? "center" : "flex-start",
         textAlign: "left",
         p: 0,
         height: "100%",
@@ -135,6 +135,7 @@ const ServicesSection = () => {
           fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
           lineHeight: 1.6,
           fontWeight: 400,
+          textAlign: isMobile ? "center" : "left",
         }}
       >
         {service.description}
@@ -161,6 +162,7 @@ const ServicesSection = () => {
               letterSpacing: "0.1em",
               mb: 2,
               display: "block",
+              textAlign: isMobile ? "center" : "left",
             }}
           >
             OUR SERVICES
@@ -183,6 +185,7 @@ const ServicesSection = () => {
                   lineHeight: { xs: 1.1, sm: 1.2 },
                   letterSpacing: { xs: "-0.02em", md: "-0.03em" },
                   mb: { xs: 3, md: 0 },
+                  textAlign: isMobile ? "center" : "left",
                 }}
               >
                 Delivering Impactful & <br />
@@ -207,6 +210,7 @@ const ServicesSection = () => {
                     fontSize: { xs: "1.1rem", sm: "1.2rem", md: "1.3rem" },
                     lineHeight: 1.6,
                     fontWeight: 400,
+                    textAlign: isMobile ? "center" : "left",
                   }}
                 >
                   A subscription with us takes away the hassle of managing
@@ -233,7 +237,7 @@ const ServicesSection = () => {
                 key={index}
                 sx={{
                   display: "flex",
-                  flexDirection: "row",
+                  flexDirection: isMobile ? "column" : "row",
                   gap: { xs: 2, sm: 3, md: 4 },
                 }}
               >
