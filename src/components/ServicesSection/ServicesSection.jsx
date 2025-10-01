@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import { AllInclusive, Bolt, CameraAlt, Movie } from "@mui/icons-material";
 import {
   ResponsiveContainer,
   ResponsiveSection,
@@ -8,35 +7,76 @@ import {
   useResponsive,
 } from "../index";
 
+// Import custom service icons
+import BillboardIcon from "../../assets/icons/Billboard.svg";
+import CarIcon from "../../assets/icons/Car.svg";
+import IndoorIcon from "../../assets/icons/Indoor.svg";
+import CubeIcon from "../../assets/icons/3dCube.svg";
+import SEOIcon from "../../assets/icons/SEO.svg";
+import PerformanceIcon from "../../assets/icons/performance.svg";
+import SupportIcon from "../../assets/icons/support.svg";
+
 const ServicesSection = () => {
   const { isMobile } = useResponsive();
 
   // Services data
   const services = [
-    {
-      icon: AllInclusive,
-      title:
-        "Premium billboards, transit ads, and street branding for maximum visibility.",
-      description: "",
-    },
-    {
-      icon: Bolt,
-      title:
-        "Engaging campaigns across social media, digital screens, and online platforms.",
-      description: "",
-    },
-    {
-      icon: CameraAlt,
-      title:
-        "Creative on-ground activations and events designed to build deep audience connections.",
-      description: "",
-    },
-    {
-      icon: Movie,
-      title:
-        "Immersive cinema advertising that captures audience attention at scale.",
-      description: "",
-    },
+    [
+      {
+        icon: BillboardIcon,
+        title: "High-Impact Digital Billboards",
+        description:
+          "Dynamic displays on prime city spots that capture attention instantly.",
+      },
+      {
+        icon: CarIcon,
+        title: "Taxi Top Screens",
+        description:
+          "Dynamic displays on prime city spots that capture attention instantly.",
+      },
+    ],
+    [
+      {
+        icon: IndoorIcon,
+        title: "Indoor Digital Standees",
+        description:
+          "Eye-catching displays in malls, airports, and events to engage audiences up close.",
+      },
+      {
+        icon: CubeIcon,
+        title: "Unique 3D Billboards",
+        description:
+          "Immersive visuals that create unforgettable brand experiences and viral moments.",
+      },
+    ],
+    [
+      {
+        icon: SEOIcon,
+        title: "SEO That Drives Results",
+        description:
+          "From keyword research to link building, we help you rank higher and attract the right audience.",
+      },
+      {
+        icon: PerformanceIcon,
+        title: "Performance Optimization",
+        description:
+          "Faster load times, responsive design, and seamless user journeys for better engagement.",
+      },
+    ],
+    [
+      {
+        icon: BillboardIcon,
+        title: "Custom Web Design",
+        description:
+          "Beautiful, user-friendly websites tailored to reflect your brand and convert visitors into customers.",
+      },
+      {
+        icon: SupportIcon,
+        title: "Ongoing Support & Updates",
+        description:
+          "Continuous improvements to keep your website fresh, relevant, and competitive.",
+      },
+    ],
   ];
 
   // Service card component
@@ -45,38 +85,59 @@ const ServicesSection = () => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        alignItems: { xs: "center", sm: "flex-start" },
-        textAlign: { xs: "center", sm: "left" },
-        p: { xs: 2, sm: 3, md: 4 },
+        alignItems: "flex-start",
+        textAlign: "left",
+        p: 0,
         height: "100%",
       }}
     >
       {/* Icon */}
       <Box
         sx={{
-          mb: { xs: 3, sm: 4, md: 5 },
+          mb: { xs: 2, sm: 3, md: 4 },
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: { xs: 48, sm: 56, md: 64 },
+          height: { xs: 48, sm: 56, md: 64 },
         }}
       >
-        <service.icon
-          sx={{
-            fontSize: { xs: 48, sm: 56, md: 64 },
-            color: "primary.main",
+        <img
+          src={service.icon}
+          alt={`${service.title} icon`}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
           }}
         />
       </Box>
 
-      {/* Title/Description */}
+      {/* Title */}
       <Typography
-        variant="body1"
+        variant="h6"
         sx={{
           color: "text.primary",
-          fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
-          lineHeight: 1.6,
-          fontWeight: 400,
-          maxWidth: { xs: "100%", sm: 300, md: 350 },
+          fontSize: { xs: "1.1rem", sm: "1.3rem", md: "1.5rem" },
+          lineHeight: 1.3,
+          fontWeight: 600,
+          mb: { xs: 1, sm: 1.5, md: 2 },
         }}
       >
         {service.title}
+      </Typography>
+
+      {/* Description */}
+      <Typography
+        variant="body1"
+        sx={{
+          color: "text.secondary",
+          fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+          lineHeight: 1.6,
+          fontWeight: 400,
+        }}
+      >
+        {service.description}
       </Typography>
     </Box>
   );
@@ -124,9 +185,9 @@ const ServicesSection = () => {
                   mb: { xs: 3, md: 0 },
                 }}
               >
-                Delivering Creative & <br />
-                Innovative Advertising <br />
-                Solutions
+                Delivering Impactful & <br />
+                Future-Ready Digital <br />
+                Advertising Solutions
               </Typography>
             </ResponsiveGrid>
 
@@ -148,10 +209,11 @@ const ServicesSection = () => {
                     fontWeight: 400,
                   }}
                 >
-                  A subscription can alleviate the stress of staffing, managing
-                  expenses, or make design calls like a Creative Director. We
-                  partner with you to ensure that your design elevates your
-                  brand to new levels.
+                  A subscription with us takes away the hassle of managing
+                  multiple vendors, budgeting complexities, or making design
+                  calls on your own. Acting as your creative partner, we ensure
+                  every campaign amplifies your brand presence and drives
+                  meaningful impact.
                 </Typography>
               </Box>
             </ResponsiveGrid>
@@ -166,19 +228,32 @@ const ServicesSection = () => {
               mt: { xs: 4, sm: 6, md: 8 },
             }}
           >
-            {services.map((service, index) => (
-              <ResponsiveGrid
+            {services.map((item, index) => (
+              <Box
                 key={index}
-                xs={12}
-                sm={6}
-                md={6}
                 sx={{
                   display: "flex",
-                  minHeight: { xs: 200, sm: 250, md: 300 },
+                  flexDirection: "row",
+                  gap: { xs: 2, sm: 3, md: 4 },
                 }}
               >
-                <ServiceCard service={service} index={index} />
-              </ResponsiveGrid>
+                {item.map((service, index) => (
+                  <ResponsiveGrid
+                    key={index}
+                    xs={12}
+                    sm={6}
+                    md={3}
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: { xs: 2, sm: 3, md: 4 },
+                      minHeight: { xs: 200, sm: 250, md: 280 },
+                    }}
+                  >
+                    <ServiceCard service={service} index={index} />
+                  </ResponsiveGrid>
+                ))}
+              </Box>
             ))}
           </ResponsiveGridContainer>
         </Box>
