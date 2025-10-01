@@ -1,12 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import {
-  Layers,
-  QuestionAnswer,
-  Circle,
-  HourglassEmpty,
-  Terminal,
-} from "@mui/icons-material";
-import {
   ResponsiveContainer,
   ResponsiveSection,
   ResponsiveGrid,
@@ -14,283 +7,122 @@ import {
   useResponsive,
 } from "../index";
 
+// Import brand logos
+import AllenLogo from "../../assets/Images/Allen.png";
+import AmityLogo from "../../assets/Images/Amity.png";
+import BurgerKingLogo from "../../assets/Images/Burgerking.png";
+import DhristiLogo from "../../assets/Images/Dhristi.png";
+import ManglamLogo from "../../assets/Images/manglams.png";
+import MayoorLogo from "../../assets/Images/Mayoorlogo.png";
+import MountLiteraLogo from "../../assets/Images/MountLitera.png";
+import OswalSoapLogo from "../../assets/Images/Oswalsoap.png";
+import SoganiLogo from "../../assets/Images/Soganilogo.png";
+
 const BrandShowcase = () => {
   const { isMobile, isTablet } = useResponsive();
 
-  // Brand data with custom icons and styling
+  // Brand data with actual PNG logos
   const brands = [
     {
-      name: "Layers",
-      icon: Layers,
-      customIcon: null,
+      name: "Amity University",
+      logo: AmityLogo,
+      alt: "Amity University Logo",
     },
     {
-      name: "Quotient",
-      icon: QuestionAnswer,
-      customIcon: null,
+      name: "Sogani Group",
+      logo: SoganiLogo,
+      alt: "Sogani Group Logo",
     },
     {
-      name: "Circooles",
-      icon: Circle,
-      customIcon: null,
+      name: "Mayoor School",
+      logo: MayoorLogo,
+      alt: "Mayoor School Logo",
     },
     {
-      name: "Hourglass",
-      icon: HourglassEmpty,
-      customIcon: null,
+      name: "Allen",
+      logo: AllenLogo,
+      alt: "Allen Logo",
     },
     {
-      name: "Command+R",
-      icon: Terminal,
-      customIcon: null,
+      name: "Burger King",
+      logo: BurgerKingLogo,
+      alt: "Burger King Logo",
     },
-  ];
+    {
+      name: "Dhristi",
+      logo: DhristiLogo,
+      alt: "Dhristi Logo",
+    },
+    {
+      name: "Oswal Soap",
+      logo: OswalSoapLogo,
+      alt: "Oswal Soap Logo",
+    },
 
-  // Custom logo components to match the design
-  const LayersLogo = ({ sx = {} }) => (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        gap: 1,
-        color: "text.primary",
-        ...sx,
-      }}
-    >
-      <Box
-        sx={{
-          width: { xs: 24, sm: 28, md: 32 },
-          height: { xs: 24, sm: 28, md: 32 },
-          backgroundColor: "text.primary",
-          borderRadius: "20%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Layers sx={{ color: "white", fontSize: { xs: 14, sm: 16, md: 18 } }} />
-      </Box>
-      <Typography
-        variant="h6"
-        sx={{
-          fontWeight: 600,
-          fontSize: { xs: "0.8rem", sm: "1.3rem", md: "1.5rem" },
-        }}
-      >
-        Layers
-      </Typography>
-    </Box>
-  );
-
-  const QuotientLogo = ({ sx = {} }) => (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        gap: 1,
-        color: "text.primary",
-        ...sx,
-      }}
-    >
-      <Box
-        sx={{
-          width: { xs: 32, sm: 36, md: 40 },
-          height: { xs: 32, sm: 36, md: 40 },
-          border: "3px solid",
-          borderColor: "text.primary",
-          borderRadius: "50%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "relative",
-        }}
-      >
-        <Box
-          sx={{
-            width: "60%",
-            height: "60%",
-            backgroundColor: "text.primary",
-            borderRadius: "50%",
-          }}
-        />
-      </Box>
-      <Typography
-        variant="h6"
-        sx={{
-          fontWeight: 600,
-          fontSize: { xs: "0.8rem", sm: "1.3rem", md: "1.5rem" },
-        }}
-      >
-        Quotient
-      </Typography>
-    </Box>
-  );
-
-  const CircoolesLogo = ({ sx = {} }) => (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        gap: 1,
-        color: "text.primary",
-        ...sx,
-      }}
-    >
-      <Box sx={{ display: "flex", gap: 0.5 }}>
-        <Circle
-          sx={{ fontSize: { xs: 12, sm: 14, md: 16 }, color: "text.primary" }}
-        />
-        <Circle
-          sx={{ fontSize: { xs: 16, sm: 18, md: 20 }, color: "text.primary" }}
-        />
-        <Circle
-          sx={{ fontSize: { xs: 12, sm: 14, md: 16 }, color: "text.primary" }}
-        />
-      </Box>
-      <Typography
-        variant="h6"
-        sx={{
-          fontWeight: 600,
-          fontSize: { xs: "0.8rem", sm: "1.3rem", md: "1.5rem" },
-        }}
-      >
-        Circooles
-      </Typography>
-    </Box>
-  );
-
-  const HourglassLogo = ({ sx = {} }) => (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        gap: 1,
-        color: "text.primary",
-        ...sx,
-      }}
-    >
-      <Box
-        sx={{
-          width: { xs: 28, sm: 32, md: 36 },
-          height: { xs: 28, sm: 32, md: 36 },
-          backgroundColor: "text.primary",
-          borderRadius: "4px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <HourglassEmpty
-          sx={{ color: "white", fontSize: { xs: 16, sm: 18, md: 20 } }}
-        />
-      </Box>
-      <Typography
-        variant="h6"
-        sx={{
-          fontWeight: 600,
-          fontSize: { xs: "0.8rem", sm: "1.3rem", md: "1.5rem" },
-        }}
-      >
-        Hourglass
-      </Typography>
-    </Box>
-  );
-
-  const CommandRLogo = ({ sx = {} }) => (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        gap: 1,
-        color: "text.primary",
-        ...sx,
-      }}
-    >
-      <Box
-        sx={{
-          width: { xs: 32, sm: 36, md: 40 },
-          height: { xs: 32, sm: 36, md: 40 },
-          backgroundColor: "text.primary",
-          transform: "skew(-15deg)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Terminal
-          sx={{
-            color: "white",
-            fontSize: { xs: 16, sm: 18, md: 20 },
-            transform: "skew(15deg)",
-          }}
-        />
-      </Box>
-      <Typography
-        variant="h6"
-        sx={{
-          fontWeight: 600,
-          fontSize: { xs: "0.8rem", sm: "1.3rem", md: "1.5rem" },
-        }}
-      >
-        Command+R
-      </Typography>
-    </Box>
-  );
-
-  const logoComponents = [
-    LayersLogo,
-    QuotientLogo,
-    CircoolesLogo,
-    HourglassLogo,
-    CommandRLogo,
+    {
+      name: "Manglam",
+      logo: ManglamLogo,
+      alt: "Manglam Logo",
+    },
+    {
+      name: "Mount Litera",
+      logo: MountLiteraLogo,
+      alt: "Mount Litera Logo",
+    },
   ];
 
   return (
     <ResponsiveSection
       sx={{
-        py: { xs: 6, sm: 8, md: 10 },
-        backgroundColor: "background.default",
+        backgroundColor: "#ffffff",
       }}
     >
       <ResponsiveContainer>
         {/* Brand Logos Grid */}
-        <ResponsiveGridContainer
-          spacing={{ xs: 1, sm: 4, md: 6 }}
+        <Box
           sx={{
+            display: "flex",
+            flexWrap: "nowrap",
             justifyContent: "center",
             alignItems: "center",
+            gap: { xs: 2, sm: 3, md: 4 },
+            maxWidth: "100%",
+            overflowX: "auto",
+            borderRadius: "24px",
+            background: "#FFF",
+            boxShadow: "0 4px 12px 0 rgba(0, 0, 0, 0.12)",
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+            scrollbarWidth: "none",
           }}
         >
-          {logoComponents.map((LogoComponent, index) => (
-            <ResponsiveGrid
+          {brands.map((brand, index) => (
+            <Box
               key={index}
-              xs={2.4}
-              sm={4}
-              md={2.4}
               sx={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                minHeight: { xs: 50, sm: 60, md: 80 },
+                minWidth: { xs: 60, sm: 80, md: 100 },
+                flexShrink: 0,
               }}
             >
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  minHeight: { xs: 40, sm: 70, md: 80 },
-                  opacity: 0.7,
-                  transition: "opacity 0.3s ease",
-                  "&:hover": {
-                    opacity: 1,
-                  },
+              <img
+                src={brand.logo}
+                alt={brand.alt}
+                style={{
+                  maxHeight: isMobile ? "35px" : isTablet ? "45px" : "55px",
+                  maxWidth: isMobile ? "70px" : isTablet ? "90px" : "110px",
+                  width: "auto",
+                  height: "auto",
+                  objectFit: "contain",
                 }}
-              >
-                <LogoComponent />
-              </Box>
-            </ResponsiveGrid>
+              />
+            </Box>
           ))}
-        </ResponsiveGridContainer>
+        </Box>
       </ResponsiveContainer>
     </ResponsiveSection>
   );
