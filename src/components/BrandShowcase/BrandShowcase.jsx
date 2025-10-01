@@ -75,55 +75,56 @@ const BrandShowcase = () => {
     <ResponsiveSection
       sx={{
         backgroundColor: "#ffffff",
+        px: { xs: 2, sm: 3, md: 4 },
+        py: { xs: 2, sm: 3, md: 4 },
       }}
     >
-      <ResponsiveContainer>
-        {/* Brand Logos Grid */}
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "nowrap",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: { xs: 2, sm: 3, md: 4 },
-            maxWidth: "100%",
-            overflowX: "auto",
-            borderRadius: "24px",
-            background: "#FFF",
-            boxShadow: "0 4px 12px 0 rgba(0, 0, 0, 0.12)",
-            "&::-webkit-scrollbar": {
-              display: "none",
-            },
-            scrollbarWidth: "none",
-          }}
-        >
-          {brands.map((brand, index) => (
-            <Box
-              key={index}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                minHeight: { xs: 50, sm: 60, md: 80 },
-                minWidth: { xs: 60, sm: 80, md: 100 },
-                flexShrink: 0,
+      {/* Brand Logos Grid */}
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "nowrap",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: { xs: 2, sm: 3, md: 4 },
+          maxWidth: "100%",
+          overflowX: "auto",
+          borderRadius: "24px",
+          background: "#FFF",
+          boxShadow: "0 4px 12px 0 rgba(0, 0, 0, 0.12)",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+          scrollbarWidth: "none",
+          padding: { xs: 2, sm: 3, md: 0 },
+        }}
+      >
+        {brands.map((brand, index) => (
+          <Box
+            key={index}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: { xs: 50, sm: 60, md: 80 },
+              minWidth: { xs: 60, sm: 80, md: 100 },
+              flexShrink: 0,
+            }}
+          >
+            <img
+              src={brand.logo}
+              alt={brand.alt}
+              style={{
+                maxHeight: isMobile ? "35px" : isTablet ? "45px" : "55px",
+                maxWidth: isMobile ? "70px" : isTablet ? "90px" : "110px",
+                width: "auto",
+                height: "auto",
+                objectFit: "contain",
               }}
-            >
-              <img
-                src={brand.logo}
-                alt={brand.alt}
-                style={{
-                  maxHeight: isMobile ? "35px" : isTablet ? "45px" : "55px",
-                  maxWidth: isMobile ? "70px" : isTablet ? "90px" : "110px",
-                  width: "auto",
-                  height: "auto",
-                  objectFit: "contain",
-                }}
-              />
-            </Box>
-          ))}
-        </Box>
-      </ResponsiveContainer>
+            />
+          </Box>
+        ))}
+      </Box>
     </ResponsiveSection>
   );
 };
