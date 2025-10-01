@@ -83,7 +83,7 @@ const BrandShowcase = () => {
       <Box
         sx={{
           display: "flex",
-          flexWrap: "nowrap",
+          flexWrap: "wrap",
           justifyContent: "center",
           alignItems: "center",
           gap: { xs: 2, sm: 3, md: 4 },
