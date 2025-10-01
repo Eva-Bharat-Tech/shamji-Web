@@ -17,8 +17,11 @@ import {
   useResponsive,
 } from "../index";
 import FAQ from "../../assets/FAQ.svg";
+import WebFAQ from "../../assets/Images/Web-FAQ.png";
+import MobileFAQ from "../../assets/Images/Mobile-FAQ.png";
+
 const FAQSection = () => {
-  const { isMobile } = useResponsive();
+  const { isMobile, isTablet } = useResponsive();
   const [expanded, setExpanded] = useState(false);
   const [contactForm, setContactForm] = useState("");
 
@@ -96,7 +99,10 @@ const FAQSection = () => {
         </Box>
 
         {/* Main Content Grid */}
-        <ResponsiveGridContainer spacing={{ xs: 4, sm: 6, md: 8 }}>
+        <ResponsiveGridContainer
+          spacing={{ xs: 4, sm: 6, md: 8 }}
+          sx={{ flexDirection: isMobile || isTablet ? "column" : "row" }}
+        >
           {/* Left Column - FAQ Illustration */}
           <ResponsiveGrid xs={12} md={5}>
             <Box
@@ -105,15 +111,15 @@ const FAQSection = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100%",
-                minHeight: { xs: 250, sm: 300, md: 400 },
+                minHeight: { xs: 200, sm: 300, md: 350 },
               }}
             >
               <img
-                src={FAQ}
+                src={isMobile || isTablet ? MobileFAQ : WebFAQ}
                 alt="FAQ Illustration"
                 style={{
                   width: "100%",
-                  maxWidth: "400px",
+                  maxWidth: isMobile || isTablet ? "80%" : "350px",
                   height: "auto",
                 }}
               />
