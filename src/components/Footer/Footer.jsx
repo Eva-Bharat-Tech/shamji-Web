@@ -1,13 +1,5 @@
 import { Box, Typography, IconButton, Divider } from "@mui/material";
 import {
-  Email,
-  Phone,
-  LocationOn,
-  Facebook,
-  Instagram,
-  LinkedIn,
-} from "@mui/icons-material";
-import {
   ResponsiveContainer,
   ResponsiveSection,
   ResponsiveGrid,
@@ -15,6 +7,14 @@ import {
   useResponsive,
 } from "../index";
 import Logo from "../../assets/Logo.svg";
+// Import custom SVG icons
+import EmailIcon from "../../assets/icons/EMail.svg";
+import CallIcon from "../../assets/icons/Call.svg";
+import LocationIcon from "../../assets/icons/Location.svg";
+import InstaIcon from "../../assets/icons/Insta.svg";
+import LinkedInIcon from "../../assets/icons/LinkedIn.svg";
+import DribbleIcon from "../../assets/icons/Dribble.svg";
+import FacebookIcon from "../../assets/icons/Facebook.svg";
 const Footer = () => {
   const { isMobile, isTablet } = useResponsive();
 
@@ -23,32 +23,10 @@ const Footer = () => {
 
   // Social media links
   const socialLinks = [
-    { icon: Facebook, color: "#1877F2", href: "#" },
-    { icon: Instagram, color: "#E4405F", href: "#" },
-    { icon: LinkedIn, color: "#0A66C2", href: "#" },
-    {
-      icon: ({ sx }) => (
-        <Box
-          sx={{
-            width: 24,
-            height: 24,
-            borderRadius: "50%",
-            backgroundColor: "#EA4C89",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "12px",
-            fontWeight: "bold",
-            color: "white",
-            ...sx,
-          }}
-        >
-          D
-        </Box>
-      ),
-      color: "#EA4C89",
-      href: "#",
-    },
+    { icon: FacebookIcon, color: "#1877F2", href: "#", alt: "Facebook" },
+    { icon: InstaIcon, color: "#E4405F", href: "#", alt: "Instagram" },
+    { icon: LinkedInIcon, color: "#0A66C2", href: "#", alt: "LinkedIn" },
+    { icon: DribbleIcon, color: "#EA4C89", href: "#", alt: "Dribbble" },
   ];
 
   return (
@@ -128,12 +106,15 @@ const Footer = () => {
                     justifyContent: "flex-start",
                   }}
                 >
-                  <Email
-                    sx={{
-                      color: "text.secondary",
-                      fontSize: 20,
-                      mr: 1,
+                  <img
+                    src={EmailIcon}
+                    alt="Email"
+                    style={{
+                      width: 20,
+                      height: 20,
+                      marginRight: 8,
                       order: 1,
+                      filter: "opacity(0.7)",
                     }}
                   />
                   <Typography
@@ -157,12 +138,15 @@ const Footer = () => {
                     justifyContent: "flex-start",
                   }}
                 >
-                  <Phone
-                    sx={{
-                      color: "text.secondary",
-                      fontSize: 20,
-                      mr: 1,
+                  <img
+                    src={CallIcon}
+                    alt="Phone"
+                    style={{
+                      width: 20,
+                      height: 20,
+                      marginRight: 8,
                       order: 1,
+                      filter: "opacity(0.7)",
                     }}
                   />
                   <Typography
@@ -186,13 +170,16 @@ const Footer = () => {
                     justifyContent: "flex-start",
                   }}
                 >
-                  <LocationOn
-                    sx={{
-                      color: "text.secondary",
-                      fontSize: 20,
-                      mr: 1,
+                  <img
+                    src={LocationIcon}
+                    alt="Location"
+                    style={{
+                      width: 20,
+                      height: 20,
+                      marginRight: 8,
                       order: 1,
-                      mt: 0.2,
+                      marginTop: 2,
+                      filter: "opacity(0.7)",
                     }}
                   />
                   <Typography
@@ -218,33 +205,34 @@ const Footer = () => {
                 }}
               >
                 {socialLinks.map((social, index) => (
-                  // <IconButton
-                  //   key={index}
-                  //   href={social.href}
-                  //   sx={{
-                  //     color: social.color,
-                  //     "&:hover": {
-                  //       backgroundColor: `${social.color}15`,
-                  //       transform: "translateY(-2px)",
-                  //     },
-                  //     transition: "all 0.3s ease",
-                  //   }}
-                  // >
-                  //   <social.icon sx={{ fontSize: 24 }} />
-                  // </IconButton>
-                  <a href={social.href}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="8"
-                      height="13"
-                      viewBox="0 0 8 13"
-                      fill="none"
-                    >
-                      <path
-                        d="M2.03189 12.5003V3.81231C2.03189 3.22565 2.15989 2.70831 2.41589 2.26031C2.68256 1.81231 3.04523 1.46031 3.50389 1.20431C3.97323 0.948312 4.51189 0.820312 5.11989 0.820312C5.58923 0.820312 5.98923 0.900312 6.31989 1.06031C6.65056 1.22031 6.9599 1.44965 7.24789 1.74831L6.1119 2.88431C5.98389 2.75631 5.84523 2.65498 5.69589 2.58031C5.54656 2.50565 5.35456 2.46831 5.11989 2.46831C4.69323 2.46831 4.36256 2.58565 4.12789 2.82031C3.90389 3.04431 3.79189 3.36965 3.79189 3.79631V12.5003H2.03189ZM0.191895 6.42031V4.82031H6.1119V6.42031H0.191895Z"
-                        fill="white"
-                      />
-                    </svg>
+                  <a
+                    key={index}
+                    href={social.href}
+                    style={{
+                      display: "inline-block",
+                      padding: "8px",
+                      borderRadius: "50%",
+                      transition: "all 0.3s ease",
+                      textDecoration: "none",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.backgroundColor = `${social.color}15`;
+                      e.target.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.backgroundColor = "transparent";
+                      e.target.style.transform = "translateY(0)";
+                    }}
+                  >
+                    <img
+                      src={social.icon}
+                      alt={social.alt}
+                      style={{
+                        width: 24,
+                        height: 24,
+                        filter: `brightness(0) saturate(100%) invert(0%)`,
+                      }}
+                    />
                   </a>
                 ))}
               </Box>
