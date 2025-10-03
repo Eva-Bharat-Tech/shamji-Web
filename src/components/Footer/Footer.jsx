@@ -16,7 +16,7 @@ import {
 } from "../index";
 import Logo from "../../assets/Logo.svg";
 const Footer = () => {
-  const { isMobile } = useResponsive();
+  const { isMobile, isTablet } = useResponsive();
 
   // Navigation links
   const navLinks = ["Home", "About us", "Services", "Contact us", "FAQ"];
@@ -62,9 +62,15 @@ const Footer = () => {
     >
       <ResponsiveContainer>
         {/* Main Footer Content */}
-        <ResponsiveGridContainer spacing={{ xs: 4, sm: 6, md: 8 }}>
+        <ResponsiveGridContainer
+          spacing={{ xs: 4, sm: 6, md: 8 }}
+          sx={{
+            flexDirection: isMobile || isTablet ? "column" : "row",
+            justifyContent: isMobile || isTablet ? "center" : "space-between",
+          }}
+        >
           {/* Left Column - Company Info */}
-          <ResponsiveGrid xs={12} md={6}>
+          <ResponsiveGrid xs={12} md={isMobile || isTablet ? 12 : 6}>
             <Box>
               {/* Logo */}
               <Box sx={{ mb: 3 }}>
@@ -98,7 +104,11 @@ const Footer = () => {
           </ResponsiveGrid>
 
           {/* Right Column - Contact Info */}
-          <ResponsiveGrid xs={12} md={6}>
+          <ResponsiveGrid
+            xs={12}
+            md={isMobile || isTablet ? 12 : 6}
+            sx={{ textAlign: isMobile || isTablet ? "center" : "right" }}
+          >
             <Box
               sx={{
                 display: "flex",

@@ -10,7 +10,7 @@ import {
   CTASection,
   Footer,
 } from "./components";
-import OurBeatifulWork from "./assets/OurBeatifulWork.png";
+import OurBeatifulWork from "./assets/OurBeatifulWork.webp";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
       <AboutSection />
       <img
         src={OurBeatifulWork}
-        style={{ width: "100%", height: "auto" }}
+        style={{ width: "100%", height: "auto", backgroundColor: "#141414" }}
         alt="Services"
       />
       <ServicesSection />
