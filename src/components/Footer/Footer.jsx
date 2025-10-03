@@ -107,14 +107,14 @@ const Footer = () => {
           <ResponsiveGrid
             xs={12}
             md={isMobile || isTablet ? 12 : 6}
-            sx={{ textAlign: isMobile || isTablet ? "center" : "right" }}
+            sx={{ textAlign: "left" }}
           >
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: { xs: "flex-start", md: "flex-end" },
-                textAlign: { xs: "left", md: "right" },
+                alignItems: "flex-start",
+                textAlign: "left",
               }}
             >
               {/* Contact Details */}
@@ -125,16 +125,15 @@ const Footer = () => {
                     display: "flex",
                     alignItems: "center",
                     mb: 2,
-                    justifyContent: { xs: "flex-start", md: "flex-end" },
+                    justifyContent: "flex-start",
                   }}
                 >
                   <Email
                     sx={{
                       color: "text.secondary",
                       fontSize: 20,
-                      mr: { xs: 1, md: 0 },
-                      ml: { xs: 0, md: 1 },
-                      order: { xs: 1, md: 2 },
+                      mr: 1,
+                      order: 1,
                     }}
                   />
                   <Typography
@@ -142,7 +141,7 @@ const Footer = () => {
                     sx={{
                       color: "text.primary",
                       fontSize: { xs: "0.9rem", sm: "1rem" },
-                      order: { xs: 2, md: 1 },
+                      order: 2,
                     }}
                   >
                     shyamjiadvertisementjaipur@gmail.com
@@ -155,16 +154,15 @@ const Footer = () => {
                     display: "flex",
                     alignItems: "center",
                     mb: 2,
-                    justifyContent: { xs: "flex-start", md: "flex-end" },
+                    justifyContent: "flex-start",
                   }}
                 >
                   <Phone
                     sx={{
                       color: "text.secondary",
                       fontSize: 20,
-                      mr: { xs: 1, md: 0 },
-                      ml: { xs: 0, md: 1 },
-                      order: { xs: 1, md: 2 },
+                      mr: 1,
+                      order: 1,
                     }}
                   />
                   <Typography
@@ -172,7 +170,7 @@ const Footer = () => {
                     sx={{
                       color: "text.primary",
                       fontSize: { xs: "0.9rem", sm: "1rem" },
-                      order: { xs: 2, md: 1 },
+                      order: 2,
                     }}
                   >
                     8650770777
@@ -185,16 +183,15 @@ const Footer = () => {
                     display: "flex",
                     alignItems: "flex-start",
                     mb: 3,
-                    justifyContent: { xs: "flex-start", md: "flex-end" },
+                    justifyContent: "flex-start",
                   }}
                 >
                   <LocationOn
                     sx={{
                       color: "text.secondary",
                       fontSize: 20,
-                      mr: { xs: 1, md: 0 },
-                      ml: { xs: 0, md: 1 },
-                      order: { xs: 1, md: 2 },
+                      mr: 1,
+                      order: 1,
                       mt: 0.2,
                     }}
                   />
@@ -203,7 +200,7 @@ const Footer = () => {
                     sx={{
                       color: "text.primary",
                       fontSize: { xs: "0.9rem", sm: "1rem" },
-                      order: { xs: 2, md: 1 },
+                      order: 2,
                       maxWidth: 200,
                     }}
                   >
@@ -217,24 +214,38 @@ const Footer = () => {
                 sx={{
                   display: "flex",
                   gap: 1,
-                  justifyContent: { xs: "flex-start", md: "flex-end" },
+                  justifyContent: "flex-start",
                 }}
               >
                 {socialLinks.map((social, index) => (
-                  <IconButton
-                    key={index}
-                    href={social.href}
-                    sx={{
-                      color: social.color,
-                      "&:hover": {
-                        backgroundColor: `${social.color}15`,
-                        transform: "translateY(-2px)",
-                      },
-                      transition: "all 0.3s ease",
-                    }}
-                  >
-                    <social.icon sx={{ fontSize: 24 }} />
-                  </IconButton>
+                  // <IconButton
+                  //   key={index}
+                  //   href={social.href}
+                  //   sx={{
+                  //     color: social.color,
+                  //     "&:hover": {
+                  //       backgroundColor: `${social.color}15`,
+                  //       transform: "translateY(-2px)",
+                  //     },
+                  //     transition: "all 0.3s ease",
+                  //   }}
+                  // >
+                  //   <social.icon sx={{ fontSize: 24 }} />
+                  // </IconButton>
+                  <a href={social.href}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="8"
+                      height="13"
+                      viewBox="0 0 8 13"
+                      fill="none"
+                    >
+                      <path
+                        d="M2.03189 12.5003V3.81231C2.03189 3.22565 2.15989 2.70831 2.41589 2.26031C2.68256 1.81231 3.04523 1.46031 3.50389 1.20431C3.97323 0.948312 4.51189 0.820312 5.11989 0.820312C5.58923 0.820312 5.98923 0.900312 6.31989 1.06031C6.65056 1.22031 6.9599 1.44965 7.24789 1.74831L6.1119 2.88431C5.98389 2.75631 5.84523 2.65498 5.69589 2.58031C5.54656 2.50565 5.35456 2.46831 5.11989 2.46831C4.69323 2.46831 4.36256 2.58565 4.12789 2.82031C3.90389 3.04431 3.79189 3.36965 3.79189 3.79631V12.5003H2.03189ZM0.191895 6.42031V4.82031H6.1119V6.42031H0.191895Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
                 ))}
               </Box>
             </Box>
