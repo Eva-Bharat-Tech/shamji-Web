@@ -1,4 +1,4 @@
-name = "shamji-web"
+name = "shamji"
 compatibility_date = "2025-09-28"
 
 # Static site configuration for Cloudflare Pages
