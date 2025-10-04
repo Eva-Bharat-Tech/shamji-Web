@@ -18,19 +18,19 @@ const AboutSection = () => {
   const statistics = [
     {
       iconSrc: marketingIcon,
-      number: "300+",
+      number: "50+",
       label: "Successful Campaigns",
       color: "#b9ceed", // Light blue
     },
     {
       iconSrc: usersIcon,
-      number: "150+",
+      number: "30+",
       label: "Happy Clients",
       color: "#b9ceed", // Light blue
     },
     {
       iconSrc: cityscapeIcon,
-      number: "40+",
+      number: "5+",
       label: "Cities",
       color: "#b9ceed", // Light blue
     },

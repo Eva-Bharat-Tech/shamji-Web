@@ -125,7 +125,7 @@ const Footer = () => {
                       order: 2,
                     }}
                   >
-                    shyamjiadvertisementjaipur@gmail.com
+                    sales@shamjimedia.com
                   </Typography>
                 </Box>
 
@@ -157,7 +157,7 @@ const Footer = () => {
                       order: 2,
                     }}
                   >
-                    8650770777
+                    8505-002200
                   </Typography>
                 </Box>
 
